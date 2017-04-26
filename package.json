@@ -1,0 +1,19 @@
+{
+  "name": "cotton",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Pimm \"de Chinchilla\" Hogeling",
+  "dependencies": {
+    "warning": "^3.0.0"
+  },
+  "//1": "The version of React below is merely the version used during development. This library most likely works    ",
+  "//2": "with older versions as well.",
+  "peerDependencies": {
+    "react": "^15.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pimm/cotton.git"
+  },
+  "license": "X11"
+}
