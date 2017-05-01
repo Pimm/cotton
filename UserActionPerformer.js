@@ -35,6 +35,21 @@ export default class UserActionPerformer {
 	 * which rejects.
 	 */
 	performSeries(component, userActions) {
-		
+		if (0 == userActions.length) {
+			return;
+		}
+		var index = 0;
+		const performNext = (function performNextUnbound() {
+			const result = this.perform(component, userActions[index++]);
+			if (index === userActions.length) {
+				return;
+			}
+			if (undefined === result) {
+				performNext();
+			} else /* if (undefined !== result) */ {
+				result.then(performNext);
+			}
+		}).bind(this);
+		performNext.call(this);
 	}
 }
